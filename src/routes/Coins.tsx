@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import Coin from "./Coin";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/Coins.css";
 
 const coins = [
@@ -40,13 +41,9 @@ function Coins() {
       </header>
       <ul className="coin_list">
         {coins.map((item) => (
-          <li
-            onClick={() => {
-              navigate(`/${item.id}`);
-            }}
-          >
-            {item.name} &rarr;
-          </li>
+          <Coin>
+            <Link to={`/${item.id}`}>{item.name + '->'}</Link>
+          </Coin>
         ))}
       </ul>
     </main>
