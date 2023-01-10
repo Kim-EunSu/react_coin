@@ -36,7 +36,7 @@ function Coins() {
   return (
     <main>
       <header id="Header">
-        <div className="title">코인dddd</div>
+        <div className="title">코인</div>
       </header>
       <ul className="coin_list">
         {coins.map((item) => (
