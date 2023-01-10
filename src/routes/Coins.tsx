@@ -1,8 +1,5 @@
+import { useNavigate } from "react-router-dom";
 import "../css/Coins.css";
-import Coin from "./Coin";
-import { Link } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
-import { ReactNode } from "react";
 
 const coins = [
   {
@@ -35,6 +32,7 @@ const coins = [
 ];
 
 function Coins() {
+  const navigate = useNavigate();
   return (
     <main>
       <header id="Header">
@@ -42,9 +40,13 @@ function Coins() {
       </header>
       <ul className="coin_list">
         {coins.map((item) => (
-          <Coin key={item.id}>
-            <Link to={`/${item.id}`}>{item.name} &rarr;</Link>
-          </Coin>
+          <li
+            onClick={() => {
+              navigate(`/${item.id}`);
+            }}
+          >
+            {item.name} &rarr;
+          </li>
         ))}
       </ul>
     </main>
