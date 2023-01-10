@@ -1,0 +1,28 @@
+main {
+  padding: 0 20px;
+}
+
+#Header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+}
+
+#Header .title {
+  font-size: 48px;
+}
+
+.coin_list li {
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 15px;
+  color: #463f3a;
+  background-color: #fefae0;
+}
