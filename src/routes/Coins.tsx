@@ -23,7 +23,6 @@ function Coins() {
     setCoins(res.data.slice(0, 100));
     setLoading(false);
   };
-  console.log(coins);
 
   useEffect(() => {
     getCoins();
@@ -41,7 +40,14 @@ function Coins() {
           {coins.map((item) => (
             <li key={item.id}>
               <Coin>
-                <Link to={`/${item.id}`}>{item.name + " ->"}</Link>
+                <Link to={`/${item.id}`} state={{ name: item.name }}>
+                  <div className="coin_wrapper">
+                    <img
+                      src={`https://coinicons-api.vercel.app/api/icon/${item.symbol.toLowerCase()}`}
+                    ></img>
+                    {item.name + " ->"}
+                  </div>
+                </Link>
               </Coin>
             </li>
           ))}

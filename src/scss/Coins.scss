@@ -13,10 +13,31 @@ main {
   font-size: 48px;
 }
 
+.coin_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .coin_list li {
+  width: 100%;
+  max-width: 640px;
   padding: 20px;
   margin: 10px 0;
   border-radius: 15px;
   color: #463f3a;
   background-color: #fefae0;
+}
+
+.coin_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.coin_list li img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
 }
