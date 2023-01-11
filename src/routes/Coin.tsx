@@ -1,5 +1,6 @@
 import { ReactNode, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
+import "../css/Coins.css";
 
 interface RouterParams {
   coinId: string;
@@ -18,10 +19,12 @@ function Coin(props: Props) {
   return (
     <>
       <h1> {props.children}</h1>
-      <div className="coin_title">
-        <p>{state?.name || "Loading..."}</p>
-      </div>
-      {loading ? <p>Loading!!...</p> : null}
+      <header id="Header">
+        <div className="title">
+          <p>{state?.name || "Loading..."}</p>
+        </div>
+      </header>
+      <div className="coin_list">{loading ? <p>Loading!!...</p> : null}</div>
     </>
   );
 }
