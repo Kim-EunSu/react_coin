@@ -37,15 +37,15 @@ function Coins() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <ul className="coin_list">
-          {coins.map((item) => (
-            <li key={item.id}>
-              <Coin>
-                <Link to={`/${item.id}`}>{item.name + " ->"}</Link>
-              </Coin>
-            </li>
-          ))}
-        </ul>
+        // <ul className="coin_list">
+        //   {coins.map((item) => (
+        //     <li key={item.id}>
+        //       <Coin>
+        //         <Link to={`/${item.id}`}>{item.name + " ->"}</Link>
+        //       </Coin>
+        //     </li>
+        //   ))}
+        // </ul>
       )}
     </main>
   );
