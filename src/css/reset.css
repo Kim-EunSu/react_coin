@@ -85,9 +85,13 @@ video {
   border: 0;
   font-size: 100%;
   font: inherit;
+  color: inherit;
   vertical-align: baseline;
-  background-color: #ccd5ae;
   text-decoration: none;
+}
+
+body {
+  background-color: #ccd5ae;
 }
 
 /* HTML5 display-role reset for older browsers */
