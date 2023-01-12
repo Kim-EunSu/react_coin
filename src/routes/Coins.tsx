@@ -46,8 +46,8 @@ function Coins() {
       ) : (
         <ul className="coin_list">
           {coins.map((item) => (
-            <li key={item.id}>
-              <Coin>
+            <li>
+              <Coin key={item.id}>
                 <Link to={`/${item.id}`} state={{ name: item.name }}>
                   <div className="coin_wrapper">
                     <img

@@ -1,5 +1,11 @@
 import { ReactNode, useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useMatch,
+  useParams,
+} from "react-router-dom";
 import "../css/Coins.css";
 import "../css/Coin.css";
 
@@ -77,6 +83,12 @@ function Coin(props: Props) {
   const [info, setInfo] = useState<InfoData>();
   const [price, setPriceInfo] = useState<PriceData>();
 
+  // const priceMatch = useMatch("/:coinId/price");
+  // const chartMatch = useMatch("/:coinId/chart");
+
+  // console.log(priceMatch);
+  // console.log(chartMatch);
+
   const { state } = useLocation();
 
   useEffect(() => {
@@ -92,21 +104,6 @@ function Coin(props: Props) {
       setLoading(false);
     })();
   }, [coinId]);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const infoData = await (
-  //       await fetch(`https://api.coinpaprika.com/v1/coins/${coinId}`)
-  //     ).json();
-  //     const priceData = await (
-  //       await fetch(`https://api.coinpaprika.com/v1/tickers/${coinId} `)
-  //     ).json();
-
-  //     setInfo(infoData);
-  //     setPriceInfo(priceData);
-  //     setLoading(false);
-  //   })();
-  // }, [coinId]);
 
   return (
     <>
@@ -149,6 +146,15 @@ function Coin(props: Props) {
                 <span>{price?.max_supply}</span>
               </div>
             </div>
+            <div className="Tabs">
+              <div className="Tab">
+                <Link to={`/${coinId}/price`}>Price</Link>
+              </div>
+              <div className="Tab">
+                <Link to={`/${coinId}/chart`}>Chart</Link>
+              </div>
+            </div>
+            <Outlet />
           </>
         )}
       </div>
