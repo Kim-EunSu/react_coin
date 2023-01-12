@@ -15,6 +15,13 @@
   justify-content: space-between;
   border-radius: 30px;
   background-color: #fefae0;
+  button {
+    position: absolute;
+    border: none;
+    background: transparent;
+    top: 50px;
+    font-size: 30px;
+  }
 }
 
 .boxItem {

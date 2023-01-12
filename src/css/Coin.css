@@ -30,6 +30,14 @@
   background-color: #fefae0;
 }
 
+.boxWrapper button {
+  position: absolute;
+  border: none;
+  background: transparent;
+  top: 50px;
+  font-size: 30px;
+}
+
 .boxItem {
   display: -webkit-box;
   display: -ms-flexbox;

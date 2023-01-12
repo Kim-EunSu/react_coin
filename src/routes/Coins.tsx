@@ -39,7 +39,7 @@ function Coins() {
   return (
     <main>
       <header id="Header">
-        <div className="title">코인</div>
+        <div className="title">Coins</div>
       </header>
       {loading ? (
         <p>Loading...</p>

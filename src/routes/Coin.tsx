@@ -4,6 +4,7 @@ import {
   Outlet,
   useLocation,
   useMatch,
+  useNavigate,
   useParams,
 } from "react-router-dom";
 import "../css/Coins.css";
@@ -83,6 +84,11 @@ function Coin(props: Props) {
   const [info, setInfo] = useState<InfoData>();
   const [price, setPriceInfo] = useState<PriceData>();
 
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/");
+  };
+
   // const priceMatch = useMatch("/:coinId/price");
   // const chartMatch = useMatch("/:coinId/chart");
 
@@ -109,17 +115,21 @@ function Coin(props: Props) {
   return (
     <>
       <h1> {props.children}</h1>
+
       <header id="Header">
         <div className="title">
           <p>{state?.name || "Why...."}</p>
         </div>
       </header>
+
       <div className="Wrapper">
         {loading ? (
           <p>Loading!!...</p>
         ) : (
           <>
             <div className="boxWrapper">
+              <button onClick={handleClick}>&larr;</button>
+
               <div className="boxItem">
                 <span>Rank </span>
                 <span>{info?.rank}</span>

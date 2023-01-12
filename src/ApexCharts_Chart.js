@@ -28,6 +28,10 @@ function ApexCharts({ coinId }) {
             name: "high",
             data: data.map((price) => price.high),
           },
+          {
+            name: "low",
+            data: data.map((price) => price.low),
+          },
         ]}
         options={{
           theme: {
@@ -58,11 +62,7 @@ function ApexCharts({ coinId }) {
             categories: data.map((price) => price.time_close),
           },
           fill: {
-            type: "gradient",
-            gradient: {
-              gradientToColors: ["yellow"],
-              stops: [0, 100],
-            },
+            type: "solid",
           },
           tooltip: {
             y: {
