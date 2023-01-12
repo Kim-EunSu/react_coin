@@ -47,16 +47,14 @@ function Coins() {
         <ul className="coin_list">
           {coins.map((item) => (
             <li>
-              <Coin key={item.id}>
-                <Link to={`/${item.id}`} state={{ name: item.name }}>
-                  <div className="coin_wrapper">
-                    <img
-                      src={`https://coinicons-api.vercel.app/api/icon/${item.symbol.toLowerCase()}`}
-                    ></img>
-                    {item.name + " ->"}
-                  </div>
-                </Link>
-              </Coin>
+              <Link to={`/${item.id}`} state={{ name: item.name }}>
+                <div className="coin_wrapper">
+                  <img
+                    src={`https://coinicons-api.vercel.app/api/icon/${item.symbol.toLowerCase()}`}
+                  ></img>
+                  {item.name + " ->"}
+                </div>
+              </Link>
             </li>
           ))}
         </ul>
