@@ -90,5 +90,6 @@
 }
 
 .Tab:active {
-  background-color: blue;
+  color: #fefae0;
+  background-color: #5d8d57;
 }

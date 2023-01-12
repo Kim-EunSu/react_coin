@@ -90,6 +90,7 @@ function Coin(props: Props) {
   // console.log(chartMatch);
 
   const { state } = useLocation();
+  // console.log(state); // null인 이유를 모르겠음
 
   useEffect(() => {
     (async () => {
@@ -110,7 +111,7 @@ function Coin(props: Props) {
       <h1> {props.children}</h1>
       <header id="Header">
         <div className="title">
-          <p>{state?.name || "Loading..."}</p>
+          <p>{state?.name || "Why...."}</p>
         </div>
       </header>
       <div className="Wrapper">
@@ -128,8 +129,8 @@ function Coin(props: Props) {
                 <span>{info?.symbol}</span>
               </div>
               <div className="boxItem">
-                <span>Open Source </span>
-                <span>{info?.open_source ? "Yes" : "No"}</span>
+                <span>Price </span>
+                <span>${price?.quotes.USD.price.toFixed(2)}</span>
               </div>
             </div>
             <div className="boxdesc">
@@ -140,7 +141,6 @@ function Coin(props: Props) {
                 <span>Total</span>
                 <span>{price?.total_supply}</span>
               </div>
-
               <div className="boxItem">
                 <span>Max </span>
                 <span>{price?.max_supply}</span>

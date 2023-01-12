@@ -1,0 +1,41 @@
+.Wrapper {
+  width: 100%;
+}
+
+.PriceWrapper {
+  width: 100%;
+  max-width: 450px;
+  display: -ms-grid;
+  display: grid;
+  gap: 30px;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.priceItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-radius: 15px;
+  background-color: #fefae0;
+}
+
+.priceItem p:first-child {
+  font-size: 15px;
+}
+
+.priceItem p:last-child {
+  font-size: 30px;
+  margin-top: 10px;
+}
