@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../css/Price.css";
 
+import axios from "axios";
+
 interface PriceData {
   id: string;
   name: string;
@@ -36,6 +38,10 @@ interface PriceData {
   };
 }
 
+interface Iconprops {
+  percentage: number;
+}
+
 interface RouterParams {
   coinId?: string;
 }
@@ -45,7 +51,7 @@ function Price() {
   const [data, setData] = useState<PriceData>();
 
   const { coinId } = useParams<"coinId">();
-  console.log(coinId);
+  // console.log(coinId);
 
   useEffect(() => {
     fetch(`https://api.coinpaprika.com/v1/tickers/${coinId}`)
@@ -53,6 +59,18 @@ function Price() {
       .then((json) => setData(json));
     setLoading(false);
   }, []);
+
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://api.coinpaprika.com/v1/tickers/${coinId}`)
+  //     .then((res) => {
+  //       setData(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
+  // => data는 불러와지는데 화면에는 출력이 안되는 이유는?
 
   console.log(data);
 
@@ -64,35 +82,27 @@ function Price() {
         <div className="PriceWrapper">
           <div className="priceItem">
             <p>1시간 전보다</p>
-            <p>{data?.quotes.USD.percent_change_1h}</p>
+            <p>{data?.quotes.USD.percent_change_1h}%</p>
           </div>
           <div className="priceItem">
             <p>6시간 전보다</p>
-            <p>{data?.quotes.USD.percent_change_6h}</p>
+            <p>{data?.quotes.USD.percent_change_6h}%</p>
           </div>
           <div className="priceItem">
             <p>12시간 전보다</p>
-            <p>{data?.quotes.USD.percent_change_12h}</p>
-          </div>{" "}
-          <div className="priceItem">
-            <p>6시간 전보다</p>
-            <p>{data?.quotes.USD.percent_change_6h}</p>
-          </div>{" "}
-          <div className="priceItem">
-            <p>12시간 전보다</p>
-            <p>{data?.quotes.USD.percent_change_12h}</p>
+            <p>{data?.quotes.USD.percent_change_12h}%</p>
           </div>
           <div className="priceItem">
             <p>1일 전보다</p>
-            <p>{data?.quotes.USD.percent_change_24h}</p>
+            <p>{data?.quotes.USD.percent_change_24h}%</p>
           </div>
           <div className="priceItem">
             <p>7일 전보다</p>
-            <p>{data?.quotes.USD.percent_change_7d}</p>
+            <p>{data?.quotes.USD.percent_change_7d}%</p>
           </div>
           <div className="priceItem">
             <p>30일 전보다</p>
-            <p>{data?.quotes.USD.percent_change_30d}</p>
+            <p>{data?.quotes.USD.percent_change_30d}%</p>
           </div>
         </div>
       )}

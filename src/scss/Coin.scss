@@ -1,11 +1,17 @@
+#Header {
+  font-weight: 700;
+  font-family: "Nanum Myeongjo", serif;
+}
+
 .Wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 20px;
-  color: #5c5753;
+  margin: 20px 0;
+  color: #fff;
+  font-family: "Nanum Myeongjo", serif;
 }
 
 .boxWrapper {
@@ -14,20 +20,20 @@
   display: flex;
   justify-content: space-between;
   border-radius: 30px;
-  background-color: #fefae0;
+  background-color: royalblue;
   button {
     position: absolute;
-    border: none;
-    background: transparent;
     top: 50px;
+    border: none;
     font-size: 30px;
+    color: #717171;
+    background: transparent;
   }
 }
 
 .boxItem {
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
   font-size: 15px;
@@ -46,6 +52,7 @@
   max-width: 450px;
   margin: 30px 0;
   font-size: 17px;
+  color: #2f2f2f;
 }
 
 .Tabs {
@@ -63,9 +70,9 @@
   text-align: center;
   padding: 10px 20px;
   border-radius: 15px;
-  background-color: #fefae0;
+  background-color: royalblue;
   &:active {
     color: #fefae0;
-    background-color: rgb(93, 141, 87);
+    background-color: rgb(32, 51, 110);
   }
 }

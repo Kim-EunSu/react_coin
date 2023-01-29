@@ -12,8 +12,6 @@ function Chart() {
 
   const { coinId } = useParams<"coinId">();
 
-  console.log(coinId);
-
   useEffect(() => {
     (async () => {
       const response = await fetch(

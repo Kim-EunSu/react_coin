@@ -1,4 +1,3 @@
-import { Component } from "react";
 import { useState, useEffect } from "react";
 import ApexChart from "react-apexcharts";
 
@@ -17,8 +16,6 @@ function ApexCharts({ coinId }) {
     })();
   }, []);
 
-  console.log(data);
-
   return (
     <div id="chart" style={{ width: "450px", marginTop: "30px" }}>
       <ApexChart
@@ -35,7 +32,7 @@ function ApexCharts({ coinId }) {
         ]}
         options={{
           theme: {
-            mode: "dark",
+            mode: "light",
           },
           chart: {
             height: 400,
@@ -43,7 +40,7 @@ function ApexCharts({ coinId }) {
             toolbar: {
               show: false,
             },
-            background: "#4b4543",
+            background: "#ffffffcc",
           },
           grid: { show: true },
           stroke: {
@@ -65,6 +62,7 @@ function ApexCharts({ coinId }) {
             type: "solid",
           },
           tooltip: {
+            fillSeriesColor: true,
             y: {
               formatter: (value) => `$${value.toFixed(3)}`,
             },

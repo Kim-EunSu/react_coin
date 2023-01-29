@@ -76,8 +76,7 @@ interface PriceData {
     };
   };
 }
-
-function Coin(props: Props) {
+function Coin(props: Props, active: any) {
   const [loading, setLoading] = useState(true);
   const { coinId } = useParams<"coinId">();
 
@@ -89,14 +88,15 @@ function Coin(props: Props) {
     navigate("/");
   };
 
-  // const priceMatch = useMatch("/:coinId/price");
-  // const chartMatch = useMatch("/:coinId/chart");
+  const priceMatch = useMatch("/:coinId/price");
+  const chartMatch = useMatch("/:coinId/chart");
 
   // console.log(priceMatch);
   // console.log(chartMatch);
 
   const { state } = useLocation();
-  // console.log(state); // null인 이유를 모르겠음
+  console.log(state); // null인 이유를 모르겠음
+  console.log(useLocation());
 
   useEffect(() => {
     (async () => {
@@ -118,7 +118,7 @@ function Coin(props: Props) {
 
       <header id="Header">
         <div className="title">
-          <p>{state?.name || "Why...."}</p>
+          <p>{state?.name || "..."}</p>
         </div>
       </header>
 
@@ -158,6 +158,7 @@ function Coin(props: Props) {
             </div>
             <div className="Tabs">
               <div className="Tab">
+                {/* <Link to={`/${coinId}/price`} style={priceMatch ? active : {}}> */}
                 <Link to={`/${coinId}/price`}>Price</Link>
               </div>
               <div className="Tab">
